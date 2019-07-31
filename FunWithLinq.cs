@@ -54,6 +54,26 @@ namespace Sandbox
         }
 
 
+        public void CoolMethod()
+        {
+            foreach (string el in classGrades)
+            {
+                string[] tempString =  
+                List<string> tempList = new List<string>()
+                {
+                    el.Split(",").ToList<string>();
+                };
+                
+                //tempList.Add(el);
+                
+            }
+            //for each i in the list 
+            //    parse things between commas (if statement?) into ints
+            //            then add them together with +=
+
+        }
+
+
 
     }
 }
