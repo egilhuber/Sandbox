@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -99,20 +100,74 @@ namespace Sandbox
             }
             //end sandbox code
 
+            //var infiniteEnumerable = new MyInfiniteEnumerable();
 
+            //foreach (var i in infiniteEnumerable)
+            //{
+            //    Console.WriteLine($"I is {i}");
+            //}
 
-            
             //FunWithLinq demo   !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
             FunWithLinq demo = new FunWithLinq();
-            
-            demo.HowToContainsMethod();
-            demo.HowToDuplicatesDemo();
+
+            //demo.HowToContainsMethod();
+            //demo.HowToDuplicatesDemo();
+            double thisDemo = demo.CoolMethod();
+            Console.WriteLine(thisDemo);
             Console.ReadLine();
-     
+
             //end of funwithlinq demo   !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 
             //last line of main bits
         }
+
+
+
+        //last line of program class
     }
 }
+
+//namespace Sandbox
+//{
+//    public class MyInfiniteEnumerable : IEnumerable<int>
+//    {
+//        public IEnumerator GetEnumerator()
+//        {
+//            return new MyINfiniteEnumerator();
+//        }
+
+//        IEnumerator<int> IEnumerable<int>.GetEnumerator()
+//        {
+//            return new MyINfiniteEnumerator();
+//        }
+//    }
+//}
+
+//namespace Sandbox
+//{
+//    public class MyINfiniteEnumerator : IEnumerator<int>
+//    {
+//        public int Current { get; private set; } = 0;
+
+//        //int IEnumerator<int>.Current => throw new NotImplementedException();
+
+//        object IEnumerator.Current => Current;
+
+//        public void Dispose()
+//        {
+            
+//        }
+
+//        public bool MoveNext()
+//        {
+//            Current++;
+//            return true;
+//        }
+
+//        public void Reset()
+//        {
+//            Current = 0;
+//        }
+//    }
+//
