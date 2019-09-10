@@ -98,5 +98,82 @@ namespace Sandbox
             double average = sum / 4;
             return average;
         }
+
+
+
+
+
+
+
+        //Write a function that takes in a string of letters {i.e. "Terrill") and returns an 
+        //alphabetically ordered string corresponding to the letter frequency (i.e."E1L2R2T1")
+
+        public void AlphaMethod(string demo)
+        {
+
+            char[] theseChars = demo.ToCharArray();
+            List<string> letters = new List<string>();
+            foreach(char s in theseChars)
+            {
+                string letter = s.ToString();
+                letters.Add(letter);
+            }
+            List<string> newList = letters.OrderBy(x => x).ToList();
+
+
+
+            var q = from x in newList
+                    group x by x into g
+                    let count = g.Count()
+                    orderby count descending
+                    select new { Value = g.Key, Quant = count };
+
+            List<string> qValues = q.Select(a => a.Value).ToList();
+            List<int> qQuants = q.Select(b => b.Quant).ToList();
+
+            List<string> z = qValues.OrderBy(x => x).ToList();
+
+            //convert z to strings
+            List<string> parsedQuants = new List<string>();
+            foreach(int i in qQuants)
+            {
+                string intsParsed = $"{i}";
+                parsedQuants.Add(intsParsed);
+            }
+            //convert z and parsedQuants to arrays
+
+            var array1 = z.ToArray();
+            var array2 = parsedQuants.ToArray();
+
+
+            //zip and concat z and parsedQuants
+
+            var zip = array1.Zip(array2, (a, b) => (a + b));
+
+            List<string> finalStringList = new List<string>();
+            foreach(var v in zip)
+            {
+                string vString = v.ToString();
+                finalStringList.Add(vString);
+            }
+            string finalString = finalStringList.Aggregate(( m, n) => m + n);
+
+            Console.WriteLine(finalString);
+
+
+        }
+
+
+
+
+
+
+
+
+
     }
+
+
 }
+
+

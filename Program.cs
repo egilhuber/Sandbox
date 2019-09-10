@@ -112,8 +112,10 @@ namespace Sandbox
 
             //demo.HowToContainsMethod();
             //demo.HowToDuplicatesDemo();
-            double thisDemo = demo.CoolMethod();
-            Console.WriteLine(thisDemo);
+            //double thisDemo = demo.CoolMethod();
+            //Console.WriteLine(thisDemo);
+            string thisDemo = Console.ReadLine();
+            demo.AlphaMethod(thisDemo);
             Console.ReadLine();
 
             //end of funwithlinq demo   !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
